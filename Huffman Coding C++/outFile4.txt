@@ -1,0 +1,3 @@
+Pre Order: mhkwfpd, m, hkwfpd, hkwf, h, kwf, k, wf, w, f, pd, p, d, 
+In Order: m, mhkwfpd, h, hkwf, k, kwf, w, wf, f, hkwfpd, p, pd, d, 
+Post Order: m, h, k, w, f, wf, kwf, hkwf, p, d, pd, hkwfpd, mhkwfpd, 

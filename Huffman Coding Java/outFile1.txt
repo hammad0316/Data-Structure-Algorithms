@@ -1,0 +1,17 @@
+The creation of this linked list using insertion sort:
+listHead-->("dummy",0,"d")-->("d",20,"NULL")--> NULL
+listHead-->("dummy",0,"f")-->("f",5,"d")-->("d",20,"NULL")--> NULL
+listHead-->("dummy",0,"f")-->("f",5,"h")-->("h",10,"d")-->("d",20,"NULL")--> NULL
+listHead-->("dummy",0,"f")-->("f",5,"k")-->("k",7,"h")-->("h",10,"d")-->("d",20,"NULL")--> NULL
+listHead-->("dummy",0,"f")-->("f",5,"k")-->("k",7,"h")-->("h",10,"d")-->("d",20,"m")-->("m",40,"NULL")--> NULL
+listHead-->("dummy",0,"f")-->("f",5,"k")-->("k",7,"h")-->("h",10,"p")-->("p",15,"d")-->("d",20,"m")-->("m",40,"NULL")--> NULL
+listHead-->("dummy",0,"w")-->("w",3,"f")-->("f",5,"k")-->("k",7,"h")-->("h",10,"p")-->("p",15,"d")-->("d",20,"m")-->("m",40,"NULL")--> NULL
+
+
+The creation of the binary tree root using the linked list: 
+listHead-->("dummy",0,"k")-->("k",7,"wf")-->("wf",8,"h")-->("h",10,"p")-->("p",15,"d")-->("d",20,"m")-->("m",40,"NULL")--> NULL
+listHead-->("dummy",0,"h")-->("h",10,"kwf")-->("kwf",15,"p")-->("p",15,"d")-->("d",20,"m")-->("m",40,"NULL")--> NULL
+listHead-->("dummy",0,"p")-->("p",15,"d")-->("d",20,"hkwf")-->("hkwf",25,"m")-->("m",40,"NULL")--> NULL
+listHead-->("dummy",0,"hkwf")-->("hkwf",25,"pd")-->("pd",35,"m")-->("m",40,"NULL")--> NULL
+listHead-->("dummy",0,"m")-->("m",40,"hkwfpd")-->("hkwfpd",60,"NULL")--> NULL
+listHead-->("dummy",0,"mhkwfpd")-->("mhkwfpd",100,"NULL")--> NULL

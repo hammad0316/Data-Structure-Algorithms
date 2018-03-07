@@ -1,0 +1,3 @@
+Pre Order: edcgbfah, e, dcgbfah, dc, d, c, gbfah, gbfa, g, bfa, bf, b, f, a, h, 
+In Order: e, edcgbfah, d, dc, c, dcgbfah, g, gbfa, b, bf, f, bfa, a, gbfah, h, 
+Post Order: e, d, c, dc, g, b, f, bf, a, bfa, gbfa, h, gbfah, dcgbfah, edcgbfah, 
