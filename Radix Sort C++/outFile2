@@ -1,0 +1,28 @@
+*** Below is the constructed stack ***
+Top --> (99, 80) --> (80, 51) --> (51, 76) --> (76, 67) --> (67, 44) --> (44, 22) --> (22, 33) --> (33, 8) --> (8, 19) --> (19, 5) --> (5, NULL) --> NULL
+
+The queues created in the hash table aftering dumping the stack: 
+Table [0][0]: Front (index) --> (80, NULL) --> NULL
+              Tail (index) --> (80, NULL) --> NULL
+Table [0][1]: Front (index) --> (51, NULL) --> NULL
+              Tail (index) --> (51, NULL) --> NULL
+Table [0][2]: Front (index) --> (22, NULL) --> NULL
+              Tail (index) --> (22, NULL) --> NULL
+Table [0][3]: Front (index) --> (33, NULL) --> NULL
+              Tail (index) --> (33, NULL) --> NULL
+Table [0][4]: Front (index) --> (44, NULL) --> NULL
+              Tail (index) --> (44, NULL) --> NULL
+Table [0][5]: Front (index) --> (5, NULL) --> NULL
+              Tail (index) --> (5, NULL) --> NULL
+Table [0][6]: Front (index) --> (76, NULL) --> NULL
+              Tail (index) --> (76, NULL) --> NULL
+Table [0][7]: Front (index) --> (67, NULL) --> NULL
+              Tail (index) --> (67, NULL) --> NULL
+Table [0][8]: Front (index) --> (8, NULL) --> NULL
+              Tail (index) --> (8, NULL) --> NULL
+Table [0][9]: Front (index) --> (99, 19) --> (19, NULL) --> NULL
+              Tail (index) --> (19, NULL) --> NULL
+
+hashTable[currentTable]: 
+Table [1][0]: Front (index) --> (5, 8) --> (8, 19) --> (19, 22) --> (22, 33) --> (33, 44) --> (44, 51) --> (51, 67) --> (67, 76) --> (76, 80) --> (80, 99) --> (99, NULL) --> NULL
+              Tail (index) --> (99, NULL) --> NULL
