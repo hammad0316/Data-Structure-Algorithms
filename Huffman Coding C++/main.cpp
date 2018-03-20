@@ -24,16 +24,23 @@ public:
     listBinTreeNode* next;
     listBinTreeNode* left;
     listBinTreeNode* right;
-     
+    
     listBinTreeNode(){
         this->chStr = "";
         this->prob = 0;
         this->code = "";
+        this->next = NULL;
+        this->left = NULL;
+        this->right = NULL;
     }
     
     listBinTreeNode(string chStr, int prob){
         this->chStr = chStr;
         this->prob = prob;
+        this->code = "";
+        this->next = NULL;
+        this->left = NULL;
+        this->right = NULL;
     }
     
     void printNode(ofstream& outFile){
@@ -41,16 +48,18 @@ public:
     }
     
     bool isLeaf(){
-        return this->left == NULL & this->right == NULL;
+        return this->left == NULL && this->right == NULL;
     }
 };
 
 class HuffmanLListTree {
+private:
     listBinTreeNode* listHead;
     listBinTreeNode* Root;
 public:
     void ConstructLinkedList(ofstream& outFile){
-        listBinTreeNode* dummy = new listBinTreeNode("dummy", 0);
+        listBinTreeNode* dummy;
+        dummy = new listBinTreeNode("dummy", 0);
         listHead = dummy;
         listBinTreeNode* spot;
         listBinTreeNode* newNode;
@@ -120,8 +129,8 @@ public:
     
     listBinTreeNode* findSpot(listBinTreeNode* node ,int prob){
         listBinTreeNode* spot = node;
-        while(spot->next != 0 && spot->next->prob < prob)
-            if(spot->next != 0 && spot->next->prob < prob) spot = spot->next;
+        while(spot->next != NULL && spot->next->prob < prob)
+            if(spot->next != NULL && spot->next->prob < prob) spot = spot->next;
         return spot;
     }
     
@@ -162,7 +171,7 @@ public:
         inOrder(Root, outFile4);
         outFile4<< endl << "Post Order: ";
         postOrder(Root, outFile4);
-        
+        listHead = NULL;
         inFile.close();
         outFile1.close();
         outFile2.close();
@@ -181,3 +190,4 @@ int main(int argc, const char * argv[]) {
     HuffmanLListTree construct;
     construct.HuffManCode();
 }
+
