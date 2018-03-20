@@ -148,6 +148,36 @@ public:
         outFile << endl;
         temp = NULL;
     }
+    
+    void printsortedQueue(ofstream& outFile){
+        if(isEmpty()){
+            cout << "It's empty";
+            return;
+        }
+        listNode* temp = head->next;
+        while(temp != NULL){
+            if(temp->next == NULL){
+                outFile << temp->data << endl;
+                return;
+            }
+            outFile << temp->data << ", ";
+            temp = temp->next;
+        }
+        outFile << endl;
+        temp = NULL;
+    }
+    
+    void subtractoffSet(int offSet){
+        listNode* temp = head->next;
+        while(temp != NULL){
+            if(temp->next == NULL){
+                temp->data -= offSet;
+                return;
+            }
+            temp->data -= offSet;
+            temp = temp->next;
+        }
+    }
 };
 
 class RadixSort{
@@ -162,6 +192,11 @@ public:
     int currentDigit;
     linkedListStack* stack = new linkedListStack();
     linkedListQueue* queue = new linkedListQueue();
+    
+    int getoffSet(){
+        return offSet;
+    }
+    
     void firstReading(){
         int negativeNum = 0, positiveNum = 0;
         int data;
@@ -255,15 +290,36 @@ public:
         }
         outFile2 << endl << "hashTable[currentTable]: " <<endl;
         printTable(hashTable[currentTable], outFile2);
-        printTable(hashTable[currentTable], outFile1);
+        subtractoffSet(hashTable[currentTable]);
+        printSorted(hashTable[currentTable], outFile1);
     }
     
     void printTable(linkedListQueue* table, ofstream& outFile){
         for(int i =0; i< 2; i++){
             for(int j=0; j<tableSize; j++){
-                if(!hashTable[i][j].isEmpty()){ //isn't going in this
+                if(!hashTable[i][j].isEmpty()){
                     outFile << "Table [" << i << "][" << j << "]: ";
                     hashTable[i][j].printQueue(outFile);
+                }
+            }
+        }
+    }
+    
+    void printSorted(linkedListQueue* table, ofstream& outFile){
+        for(int i =0; i< 2; i++){
+            for(int j=0; j<tableSize; j++){
+                if(!hashTable[i][j].isEmpty()){
+                    hashTable[i][j].printsortedQueue(outFile);
+                }
+            }
+        }
+    }
+    
+    void subtractoffSet(linkedListQueue* table){
+        for(int i =0; i< 2; i++){
+            for(int j=0; j<tableSize; j++){
+                if(!hashTable[i][j].isEmpty()){
+                    hashTable[i][j].subtractoffSet(offSet);
                 }
             }
         }
@@ -271,13 +327,13 @@ public:
 };
 
 int main(int argc, const char * argv[]) {
-    inFile.open("/Users/hammadahmad/Desktop/323 /AhmadH_Project4_CPP/inputFile");
-    outFile1.open("/Users/hammadahmad/Desktop/323 /AhmadH_Project4_CPP/outFile1");
-    outFile2.open("/Users/hammadahmad/Desktop/323 /AhmadH_Project4_CPP/outFile2");
+    inFile.open(argv[1]);
+    outFile1.open(argv[2]);
+    outFile2.open(argv[3]);
     RadixSort sort;
     sort.firstReading();
     inFile.close();
-    inFile.open("/Users/hammadahmad/Desktop/323 /AhmadH_Project4_CPP/inputFile");
+    inFile.open(argv[1]);
     sort.loadStack();
     sort.Sort();
     inFile.close();
